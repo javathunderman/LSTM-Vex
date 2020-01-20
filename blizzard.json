@@ -1,16 +1,16 @@
 {
 	"data": {
-		"filename": "Pennsylvania.csv",
+		"filename": "blizzard.csv",
 		"columns": [
-			"Pennsylvania"
+			"blizzard"
 		],
-		"sequence_length": 10,
-		"train_test_split": 0.8,
+		"sequence_length": 4,
+		"train_test_split": 0.85,
 		"normalise": false
 	},
 	"training": {
-		"epochs": 5,
-		"batch_size": 15
+		"epochs": 8,
+		"batch_size": 8
 	},
 	"model": {
 		"loss": "mse",
@@ -20,7 +20,7 @@
 			{
 				"type": "lstm",
 				"neurons": 50,
-				"input_timesteps": 9,
+				"input_timesteps": 3,
 				"input_dim": 1,
 				"return_seq": true
 			},
