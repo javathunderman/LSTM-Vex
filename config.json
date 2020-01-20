@@ -1,16 +1,16 @@
 {
 	"data": {
-		"filename": "2616J.csv",
+		"filename": "blizzard.csv",
 		"columns": [
-			"2616J"
+			"blizzard"
 		],
 		"sequence_length": 10,
-		"train_test_split": 0.85,
+		"train_test_split": 0.9,
 		"normalise": false
 	},
 	"training": {
-		"epochs": 1,
-		"batch_size": 2
+		"epochs": 5,
+		"batch_size": 10
 	},
 	"model": {
 		"loss": "mse",
