@@ -10,7 +10,7 @@ import math
 import matplotlib.pyplot as plt
 from core.data_processor import DataLoader
 from core.model import Model
-
+import sys
 
 def plot_results(predicted_data, true_data):
     fig = plt.figure(facecolor='white')
@@ -34,7 +34,8 @@ def plot_results_multiple(predicted_data, true_data, prediction_len):
 
 
 def main():
-    configs = json.load(open('config.json', 'r'))
+    fileName = sys.argv[1]
+    configs = json.load(open(fileName, 'r'))
     if not os.path.exists(configs['model']['save_dir']): os.makedirs(configs['model']['save_dir'])
 
     data = DataLoader(
