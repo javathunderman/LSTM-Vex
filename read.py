@@ -1,2 +1,10 @@
-import pandas as pd
-pd.read_hdf("saved_models/20012020-134632-e8.h5",key)
+import statistics
+data = []
+with open("dump.csv") as f:
+    content = f.readlines()
+content = [x.strip() for x in content]
+content = [x.replace(',', '') for x in content]
+content.pop(0)
+content = [float(i) for i in content]
+
+print(statistics.median(content))

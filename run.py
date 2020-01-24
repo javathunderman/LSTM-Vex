@@ -26,10 +26,17 @@ def plot_results_multiple(predicted_data, true_data, prediction_len):
     ax = fig.add_subplot(111)
     ax.plot(true_data, label='True Data')
 	# Pad the list of predictions to shift it in the graph to it's correct start
-    for i, data in enumerate(predicted_data):
-        padding = [None for p in range(i * prediction_len)]
-        plt.plot(padding + data, label='Prediction')
-        plt.legend()
+    open("dump.csv", 'w').close()
+    with open("dump.csv", "a") as f:
+        f.write("scores,\n")
+        for i, data in enumerate(predicted_data):
+            padding = [None for p in range(i * prediction_len)]
+            temp = padding+data
+            tempList = list(filter(None.__ne__, temp))
+            for thing in tempList:
+                f.write(str(thing) + ",\n")
+            plt.plot(padding + data, label='Prediction')
+            plt.legend()
     plt.show()
 
 
