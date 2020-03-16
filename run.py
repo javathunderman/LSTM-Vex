@@ -40,8 +40,7 @@ def plot_results_multiple(predicted_data, true_data, prediction_len):
     plt.show()
 
 
-def main():
-    fileName = sys.argv[1]
+def train(fileName):
     configs = json.load(open(fileName, 'r'))
     if not os.path.exists(configs['model']['save_dir']): os.makedirs(configs['model']['save_dir'])
 
@@ -93,7 +92,3 @@ def main():
 
     plot_results_multiple(predictions, y_test, configs['data']['sequence_length'])
     # plot_results(predictions, y_test)
-
-
-if __name__ == '__main__':
-    main()
